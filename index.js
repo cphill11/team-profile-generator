@@ -1,3 +1,35 @@
+// const inquirer required to run the inquirer package
+const inquirer = require('inquirer');
+
+// const fs required to run node.js fs module
+const fs = require('fs');
+
+// path module of node.js; helps w/ file & directory paths
+const path = require('path');
+
+// connects index.js to generateIndex.html
+const generateIndex = require ('./utils/generateIndex');
+
+
+// function created to write html file
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
+}
+
+// function created to initialize app
+function init() {
+    inquirer.prompt(questions)
+    .then((answers) => {
+        //console.log(answers.title);
+        writeToFile('newIndex.html', generateIndex({...answers}))
+    })
+}
+// Function call used to initialize app
+init();
+
+
+
+
 // Employee class is first parent class
 
 // Properties & methods include:
