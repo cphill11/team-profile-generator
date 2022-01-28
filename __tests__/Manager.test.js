@@ -3,7 +3,7 @@ const Manager = require('../lib/Manager.js');
 
 test('constructor officeNumber argument', () => {
     // set test variable
-    const officenumber= 567
+    const officenumber = 567
     const manager = new Manager("name", 1234, "email", officenumber)
         expect(manager.officeNumber).toBe(officenumber)
 })
@@ -18,13 +18,6 @@ test('get officeNumber method', () => {
 test('getRole method', () => {
     // set test variable
     const getrole = 'Manager'
-    const manager = new Manager("name", 1234, "email", 
-    567)
+    const manager = new Manager("name", 1234, "email", 567)
         expect(manager.getRole()).toBe(getrole)
 })
-
-// Other 3 classes will extend Employee class + more properties/ methods
-// Manager class
-    // officeNumber
-    // getRole()   // overridden to return 'Manager'
-

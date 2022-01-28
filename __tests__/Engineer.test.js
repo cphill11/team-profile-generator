@@ -1,7 +1,6 @@
 // import & mock necessary modules to create a failing test that will check for proper object creation
 const Engineer = require('../lib/Engineer.js');
 
-
 test('constructor github argument', () => {
     // set test variable
     const github = 'Chuck'
@@ -19,15 +18,6 @@ test('get github method', () => {
 test('getRole method', () => {
     // set test variable
     const getrole = 'Engineer'
-    const engineer = new Engineer("name", 1234, "email", 
-    "github")
+    const engineer = new Engineer("name", 1234, "email", "github")
         expect(engineer.getRole()).toBe(getrole)
 })
-
-// Other 3 classes will extend Employee class + more properties/ methods
-
-// Engineer class
-    // github  // returns GitHub username
-    // getGithub()
-    // getRole()   // overriden to return 'Engineer'
-
