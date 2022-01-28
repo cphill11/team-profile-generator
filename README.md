@@ -35,7 +35,11 @@ THEN I exit the application, and the HTML is generated
 
 ## Usage
 
+
 ## Website
+Github link:
+
+Screencastify link:
 
 
 ## Image
