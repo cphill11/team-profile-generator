@@ -32,11 +32,23 @@ THEN I exit the application, and the HTML is generated
 * jest
 * 
 
+
+## Usage
+
 ## Website
 
 
 ## Image
 ![Screenshot](/assets/images/screenshot.png)
 
-# Made By:
+## Credits
 Criste Phillips
+
+## License
+MIT
+
+## Badges
+![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+
+## Contributing
+Sticky paws off unless checking with original creator first.  No exceptions.
