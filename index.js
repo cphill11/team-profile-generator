@@ -8,8 +8,9 @@ const fs = require('fs');
 const path = require('path');
 
 // connects index.js to generateMarkdown.js
-const generateMarkdown = require ('./utils/generateMarkdown');
+// const generateMarkdown = require ('./utils/generateMarkdown');
 const generatePage = require('./src/page-template');
+// connect 
 const { writeFile, copyFile } = require('./utils/generateMarkdown.js');
 
 
@@ -18,21 +19,51 @@ const { writeFile, copyFile } = require('./utils/generateMarkdown.js');
 
 const promptUser = () => {
     return inquirer.prompt([
-      {
-        type: 'input',
-        name: 'name',
-        message: 'What is your name? (Required)',
-        // if / else will require a name input and not allow a user to simply skip
-        validate: nameInput => {
-            if (nameInput) {
-                return true;
-            } else {
-                console.log('Please enter your name!');
-                return false;
+        {
+            type: 'input',
+            name: 'name',
+            message: "What is your Employee's name? (Required)",
+            // if / else will require a name input and not allow a user to simply skip
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter Employee name');
+                    return false;
+                }
             }
-          }
         },
-      {
+        {
+            type: 'input',
+            name: 'id',
+            message: "What is your Employee's ID number? (Required)",
+            // if / else will require a name input and not allow a user to simply skip
+            validate: idInput => {
+                if (idInput) {
+                    return true;
+                } else {
+                    console.log('Please enter Employee ID number');
+                    return false;
+                }
+            }
+        },
+            {
+                type: 'input',
+                name: 'email',
+                message: "What is your Employee's email address? (Required)",
+                // if / else will require a name input and not allow a user to simply skip
+                validate: emailInput => {
+                    if (emailInput) {
+                        return true;
+                    } else {
+                        console.log('Please enter Employee email address');
+                        return false;
+                    }
+                  }
+                },
+  
+  
+            {
         type: 'input',
         name: 'github',
         message: 'Enter your GitHub Username (Required)',
