@@ -15,7 +15,84 @@ const { writeFile, copyFile } = require('./src/generateHTML.js');
 
 
 const promptUser = () => {
-    return inquirer.prompt([
+   inquirer.prompt([
+        // first manager (answers all questions in it's own prompt); will end up w/ 4-5 (multiple prompts)
+        // allow choice of employee (engineer, intern)
+        // fill in their responses accordingly
+
+        {
+            type: 'input',
+            name: 'name',
+            message: "What is your Manager's name? (Required)",
+            // if / else will require a name input and not allow a user to simply skip
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log("Please enter Manager's name");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: "What is your Manager's ID number? (Required)",
+            // if / else will require a name input and not allow a user to simply skip
+            validate: idInput => {
+                // make sure this returns a number
+                if(idInput.match(/^-?\d+$/)){
+                    //valid integer (positive or negative) {
+                    return true;
+                } else {
+                    console.log("Please enter Manager's ID number");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "What is your Manager's email address? (Required)",
+            // if / else will require a name input and not allow a user to simply skip
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log("Please enter Manager's email address");
+                    return false;
+                }
+                }
+        },  
+    ])   
+
+
+        
+        .then (managerData => {
+            // call fxn  for managerUser so it asks what type of employee to ask
+        })
+    }
+
+            const managerUser = () => { 
+                inquirer.prompt([
+                    {
+                        type: 'list',
+                        name: 'employee type',
+                        message: 'What type of employee is this?',
+                        choices: ['Engineer', 'Intern', 'done']
+                    }
+                
+                ]).then 
+                    // if engineer... then
+                    // if intern... then
+                }
+       
+                // make sure to add option for 'done' when done w/ selection
+
+
+
+
+
         {
             type: 'input',
             name: 'name',
@@ -36,8 +113,9 @@ const promptUser = () => {
             message: "What is your Employee's ID number? (Required)",
             // if / else will require a name input and not allow a user to simply skip
             validate: idInput => {
-                if (idInput) {
-                    return true;
+                // make sure this returns a number
+                if(idInput.match(/^-?\d+$/)){
+                    //valid integer (positive or negative) {
                 } else {
                     console.log('Please enter Employee ID number');
                     return false;
@@ -57,36 +135,15 @@ const promptUser = () => {
                     return false;
                 }
                 }
-        },
-  
-  
-        {
-        type: 'input',
-        name: 'github',
-        message: 'Enter your GitHub Username (Required)',
-        validate: githubInput => {
-            if (githubInput) {
-                return true;
-            } else {
-                console.log('Please enter your GitHub username!');
-                return false;
-            }
-          }
-      },
-      {
-          type: 'confirm',
-          name: 'confirmAbout',
-          message: 'Would you like to enter some information about yourself for an "About" section?',
-          default: true
-      },
-      {
-        type: 'input',
-        name: 'about',
-        message: 'Provide some information about yourself:',
-        when: ({ confirmAbout }) => confirmAbout
-      }
+        },  
+        
     ]);
-  };
+  
+    };
+
+
+
+
 
 const promptProject = portfolioData => {
     // if there is no 'projects' array property, create one
@@ -173,6 +230,7 @@ promptUser()
   .then(portfolioData => {
     return generatePage(portfolioData);
   })
+
   .then(pageHTML => {
     return writeFile(pageHTML);
   })
@@ -180,13 +238,6 @@ promptUser()
     console.log(writeFileResponse);
     // return copyFile();
   })
-//   .then(copyFileResponse => {
-//     console.log(copyFileResponse);
-//   })
   .catch(err => {
     console.log(err);
   });
-    
-
-  // ****************** //
-
