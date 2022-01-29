@@ -178,11 +178,11 @@ promptUser()
   })
   .then(writeFileResponse => {
     console.log(writeFileResponse);
-    return copyFile();
+    // return copyFile();
   })
-  .then(copyFileResponse => {
-    console.log(copyFileResponse);
-  })
+//   .then(copyFileResponse => {
+//     console.log(copyFileResponse);
+//   })
   .catch(err => {
     console.log(err);
   });
@@ -190,24 +190,3 @@ promptUser()
 
   // ****************** //
 
-// function created to write html file
-function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
-}
-
-// function created to initialize app
-function init() {
-    inquirer.prompt(questions)
-    .then((answers) => {
-        //console.log(answers.title);
-        writeToFile('newIndex.html', generateIndex({...answers}))
-    })
-}
-// Function call used to initialize app
-init();
-
-
-
-
-
-//  **** Consider adding validation to ensure proper input ***
