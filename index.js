@@ -11,7 +11,7 @@ const path = require('path');
 // const generateMarkdown = require ('./utils/generateMarkdown');
 const generatePage = require('./src/page-template');
 // connects index.js to generateMarkdown.js (new path)
-const { writeFile, copyFile } = require('./src/generateMarkdown.js');
+const { writeFile, copyFile } = require('./src/generateHTML.js');
 
 
 const promptUser = () => {

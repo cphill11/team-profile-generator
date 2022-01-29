@@ -15,7 +15,7 @@ const generateAbout = aboutText => {
   // create the projects section
   const generateProjects = projectsArr => {
     return `
-      <section class="my-3" id="portfolio">
+      <section class="my-3" id="employee">
         <h2 class="text-dark bg-primary p-2 display-inline-block">Work</h2>
         <div class="flex-row justify-space-between">
         ${projectsArr
@@ -23,11 +23,8 @@ const generateAbout = aboutText => {
           .map(({ name, description, languages, link }) => {
             return `
             <div class="col-12 mb-2 bg-dark text-light p-3">
-              <h3 class="portfolio-item-title text-light">${name}</h3>
-              <h5 class="portfolio-languages">
-                Built With:
-                ${languages.join(', ')}
-              </h5>
+              <h3 class="employee-item-title text-light">${name}</h3>
+
               <p>${description}</p>
               <a href="${link}" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
             </div>
@@ -40,13 +37,9 @@ const generateAbout = aboutText => {
           .map(({ name, description, languages, link }) => {
             return `
             <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
-              <h3 class="portfolio-item-title text-light">${name}</h3>
-              <h5 class="portfolio-languages">
-                Built With:
-                ${languages.join(', ')}
-              </h5>
+              <h3 class="employee-item-title text-light">${name}</h3>
+              <h5 class="employee-languages">
               <p>${description}</p>
-              <a href="${link}" class="btn mt-auto"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
             </div>
           `;
           })
