@@ -7,14 +7,11 @@ const fs = require('fs');
 // path module of node.js; helps w/ file & directory paths
 const path = require('path');
 
-// connects index.js to generateMarkdown.js
+// connects index.js to generateMarkdown.js (orig path)
 // const generateMarkdown = require ('./utils/generateMarkdown');
 const generatePage = require('./src/page-template');
-// connect 
-const { writeFile, copyFile } = require('./utils/generateMarkdown.js');
-
-
-// **************************//
+// connects index.js to generateMarkdown.js (new path)
+const { writeFile, copyFile } = require('./src/generateMarkdown.js');
 
 
 const promptUser = () => {
@@ -47,23 +44,23 @@ const promptUser = () => {
                 }
             }
         },
-            {
-                type: 'input',
-                name: 'email',
-                message: "What is your Employee's email address? (Required)",
-                // if / else will require a name input and not allow a user to simply skip
-                validate: emailInput => {
-                    if (emailInput) {
-                        return true;
-                    } else {
-                        console.log('Please enter Employee email address');
-                        return false;
-                    }
-                  }
-                },
+        {
+            type: 'input',
+            name: 'email',
+            message: "What is your Employee's email address? (Required)",
+            // if / else will require a name input and not allow a user to simply skip
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter Employee email address');
+                    return false;
+                }
+                }
+        },
   
   
-            {
+        {
         type: 'input',
         name: 'github',
         message: 'Enter your GitHub Username (Required)',
