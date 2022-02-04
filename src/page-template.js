@@ -38,7 +38,6 @@ const generateAbout = aboutText => {
             return `
             <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
               <h3 class="employee-item-title text-light">${name}</h3>
-              <h5 class="employee-languages">
               <p>${description}</p>
             </div>
           `;
@@ -73,7 +72,7 @@ module.exports = templateData => {
       <header>
         <div class="container flex-row justify-space-around align-center py-3">
           <h1 class="page-title text-secondary py-2 px-3">${header.name}</h1>
-                    
+          <h2><a href="https://github.com/${github}">Github</a></h2>       
         </div>
       </header>
       
