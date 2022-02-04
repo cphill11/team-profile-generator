@@ -1,17 +1,8 @@
-// const inquirer required to run the inquirer package
 const inquirer = require('inquirer');
-
-// const fs required to run node.js fs module
 const fs = require('fs');
-
-// path module of node.js; helps w/ file & directory paths
 const path = require('path');
-
-// connects index.js to generateMarkdown.js (orig path)
-// const generateMarkdown = require ('./utils/generateMarkdown');
 const generatePage = require('./src/page-template');
-// connects index.js to generateMarkdown.js (new path)
-const { writeFile, copyFile } = require('./src/generateHTML.js');
+const { writeFile } = require('./src/generateHTML.js');
 
 
 const promptUser = () => {
@@ -64,82 +55,83 @@ const promptUser = () => {
                 }
                 }
         },  
-    ])   
+    ]) 
+  }  
 
 
         
-        .then (managerData => {
-            // call fxn  for managerUser so it asks what type of employee to ask
-        })
-    }
+    //     .then (managerData => {
+    //         // call fxn  for managerUser so it asks what type of employee to ask
+    //     })
+    // }
 
-            const managerUser = () => { 
-                inquirer.prompt([
-                    {
-                        type: 'list',
-                        name: 'employee type',
-                        message: 'What type of employee is this?',
-                        choices: ['Engineer', 'Intern', 'done']
-                    }
+    //         const managerUser = () => { 
+    //             inquirer.prompt([
+    //                 {
+    //                     type: 'list',
+    //                     name: 'employee type',
+    //                     message: 'What type of employee is this?',
+    //                     choices: ['Engineer', 'Intern', 'done']
+    //                 }
                 
-                ]).then 
-                    // if engineer... then
-                    // if intern... then
-                }
+    //             ]).then 
+    //                 // if engineer... then
+    //                 // if intern... then
+    //             }
        
-                // make sure to add option for 'done' when done w/ selection
+    //             // make sure to add option for 'done' when done w/ selection
 
 
 
 
 
-        {
-            type: 'input',
-            name: 'name',
-            message: "What is your Employee's name? (Required)",
-            // if / else will require a name input and not allow a user to simply skip
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log('Please enter Employee name');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
-            name: 'id',
-            message: "What is your Employee's ID number? (Required)",
-            // if / else will require a name input and not allow a user to simply skip
-            validate: idInput => {
-                // make sure this returns a number
-                if(idInput.match(/^-?\d+$/)){
-                    //valid integer (positive or negative) {
-                } else {
-                    console.log('Please enter Employee ID number');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
-            name: 'email',
-            message: "What is your Employee's email address? (Required)",
-            // if / else will require a name input and not allow a user to simply skip
-            validate: emailInput => {
-                if (emailInput) {
-                    return true;
-                } else {
-                    console.log('Please enter Employee email address');
-                    return false;
-                }
-                }
-        },  
+    //     {
+    //         type: 'input',
+    //         name: 'name',
+    //         message: "What is your Employee's name? (Required)",
+    //         // if / else will require a name input and not allow a user to simply skip
+    //         validate: nameInput => {
+    //             if (nameInput) {
+    //                 return true;
+    //             } else {
+    //                 console.log('Please enter Employee name');
+    //                 return false;
+    //             }
+    //         }
+    //     },
+    //     {
+    //         type: 'input',
+    //         name: 'id',
+    //         message: "What is your Employee's ID number? (Required)",
+    //         // if / else will require a name input and not allow a user to simply skip
+    //         validate: idInput => {
+    //             // make sure this returns a number
+    //             if(idInput.match(/^-?\d+$/)){
+    //                 //valid integer (positive or negative) {
+    //             } else {
+    //                 console.log('Please enter Employee ID number');
+    //                 return false;
+    //             }
+    //         }
+    //     },
+    //     {
+    //         type: 'input',
+    //         name: 'email',
+    //         message: "What is your Employee's email address? (Required)",
+    //         // if / else will require a name input and not allow a user to simply skip
+    //         validate: emailInput => {
+    //             if (emailInput) {
+    //                 return true;
+    //             } else {
+    //                 console.log('Please enter Employee email address');
+    //                 return false;
+    //             }
+    //             }
+    //     },  
         
-    ]);
+    // ]);
   
-    };
+    // };
 
 
 

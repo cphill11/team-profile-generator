@@ -73,21 +73,11 @@
   }
   
   header {
-    background-color: var(--primary);
+    background-color: rgb(171, 61, 61);
     position: sticky;
     top: 0;
   }
   
-  nav {
-    width: 100%;
-    margin-top: 10px;
-    justify-content: center;
-  }
-  
-  nav a:hover {
-    color: var(--secondary);
-    background-color: var(--dark);
-  }
   
   .page-title {
     text-align: center;
