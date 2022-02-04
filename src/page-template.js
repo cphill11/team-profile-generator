@@ -1,7 +1,3 @@
-
-
-
-
 // create the about section
 const generateAbout = aboutText => {
     if (!aboutText) {
@@ -91,4 +87,4 @@ module.exports = templateData => {
     `;
   };
 
-  module.exports = generatePage;
+  //module.exports = generatePage;
