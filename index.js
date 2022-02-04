@@ -4,13 +4,9 @@ const path = require('path');
 const generatePage = require('./src/page-template');
 const { writeFile } = require('./src/generateHTML.js');
 
-
 const promptUser = () => {
    inquirer.prompt([
         // first manager (answers all questions in it's own prompt); will end up w/ 4-5 (multiple prompts)
-        // allow choice of employee (engineer, intern)
-        // fill in their responses accordingly
-
         {
             type: 'input',
             name: 'name',
@@ -57,8 +53,16 @@ const promptUser = () => {
                 }
         },  
     ]) 
+        // allow choice of employee (engineer, intern)
+
+        //type: 'confirm',
+//           name: 'add employee',
+//           message: 'Would you like to add an employee to your roster?',
+//           default: false
+//         },
+        // fill in their responses accordingly
   }  
-    
+  
 
         
     //     .then (managerData => {
@@ -176,12 +180,7 @@ const promptUser = () => {
 //             }
 //           }
 //         },
-//         {
-//           type: 'checkbox',
-//           name: 'languages',
-//           message: 'What did you build this project with? (Check all that apply)',
-//           choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
-//         },
+//         
 //         {
 //           type: 'input',
 //           name: 'link',
@@ -196,17 +195,6 @@ const promptUser = () => {
 //           }
 //         },
 //         {
-//           type: 'confirm',
-//           name: 'feature',
-//           message: 'Would you like to feature this project?',
-//           default: false
-//         },
-//         {
-//           type: 'confirm',
-//           name: 'confirmAddProject',
-//           message: 'Would you like to enter another project',
-//           default: false
-//         },
 //     ])
 //     .then(projectData => {
 //         portfolioData.projects.push(projectData);
