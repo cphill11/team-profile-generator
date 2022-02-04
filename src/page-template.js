@@ -16,7 +16,7 @@ const generateAbout = aboutText => {
   const generateProjects = projectsArr => {
     return `
       <section class="my-3" id="employee">
-        <h2 class="text-dark bg-primary p-2 display-inline-block">Work</h2>
+       
         <div class="flex-row justify-space-between">
         ${projectsArr
           .filter(({ feature }) => feature)
@@ -71,8 +71,8 @@ module.exports = templateData => {
     <body>
     
       <header>
-        <div class="container flex-row justify-space-between align-center py-3">
-          <h1 class="page-title text-secondary bg-dark py-2 px-3">${header.name}</h1>
+        <div class="container flex-row justify-space-around align-center py-3">
+          <h1 class="page-title text-secondary py-2 px-3">${header.name}</h1>
                     
         </div>
       </header>
