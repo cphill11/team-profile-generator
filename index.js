@@ -173,66 +173,64 @@ const promptUser = () => {
         name: 'internName',
         message: "What is the Intern's name?",
         validate: nameInput => {
-            if (nameInput) {
-                return true;
-            } else {
-                console.log("Please enter Intern's name");
-                return false;
-            }
+          if (nameInput) {
+            return true;
+          } else {
+            console.log("Please enter Intern's name");
+            return false;
+          }
         }
-    },
-    
-    {
+      },
+      {
         type: 'input',
         name: 'internId',
         message: "What is the Intern's ID number?",
           validate: idInput => {
             // make sure this returns a number
             if(idInput.match(/^-?\d+$/)){
-                //valid integer (positive or negative) {
-                return true;
+              //valid integer (positive or negative) {
+              return true;
             } else {
-                console.log("Please enter Interns's ID number");
-                return false;
+              console.log("Please enter Interns's ID number");
+              return false;
             }
-        }
-    },
-    {
+          }
+      },
+      {
         type: 'input',
         name: 'internEmail',
         message: "What is the Intern's email address?",
         validate: emailInput => {
-            if (emailInput) {
-                return true;
-            } else {
-                console.log("Please enter Intern's email address");
-                return false;
-            }
-            }
-    },  
-    {
-      type: 'input',
-      name: 'internSchool',
-      message: "What is the Intern's school name?",
-      validate: schoolInput => {
-          if (schoolInput) {
-              return true;
+          if (emailInput) {
+            return true;
           } else {
-              console.log("Please enter Intern's school name?");
-              return false;
+            console.log("Please enter Intern's email address");
+            return false;
+          }
+        }
+      },  
+      {
+        type: 'input',
+        name: 'internSchool',
+        message: "What is the Intern's school name?",
+        validate: schoolInput => {
+          if (schoolInput) {
+            return true;
+          } else {
+            console.log("Please enter Intern's school name?");
+            return false;
           }
           }
-  },  
-]) 
-  .then(answers => {
-    console.log(answers)
-    const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
-    allEmployees.push(intern);
-    //console.log(allEmployees);
-    directory();
-  });
-  
-}
+      },  
+    ]) 
+    .then(answers => {
+      console.log(answers)
+      const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+      allEmployees.push(intern);
+      //console.log(allEmployees);
+      directory();
+    });
+  }
 
   const generateHTML = () => {
     console.log(allEmployees);
@@ -242,7 +240,7 @@ const promptUser = () => {
   }
 
  promptUser()
-  // .then(promptProject)
+  
   // .then(portfolioData => {
   //   return generatePage(portfolioData);
   // })
