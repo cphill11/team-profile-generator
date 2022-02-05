@@ -53,7 +53,8 @@ const generateCards = cardsArr => {
             <div class="col-12 col-md-6 mb-2 p-3 flex-column">
             <h4 class="employee-item-title text-primary">ID: ${id}</h4>
             <h4 class="employee-item-title text-primary">Email: ${email}</h4>
-            <h4 class="employee-item-title text-primary">GitHub Username: ${github}</h4>
+            <h4 class="employee-item-title text-primary">GitHub Username:
+              <a href="https://github.com/${github}" target="_blank">${github}</a></h4>
             </div>
           </div>
         `;
