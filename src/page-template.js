@@ -34,9 +34,9 @@ const generateCards = cardsArr => {
             <h2 class="employee-item-title text-light">${name}</h3>
             <h3 class="employee-item-title text-light">Manager</h3>
             <div class="col-12 col-md-6 mb-2 text-light p-3 flex-column">
-            <h4 class="employe-item-title text-primary>ID: ${id}</h4>
-            <h4 class="employe-item-title text-primary">Email: ${email}</h4>
-            <h4 class="employe-item-title text-primary">Office Number: ${officeNumber}</h4>
+            <h4 class="employee-item-title text-primary>ID: ${id}</h4>
+            <h4 class="employee-item-title text-primary">Email: ${email}</h4>
+            <h4 class="employee-item-title text-primary">Office Number: ${officeNumber}</h4>
             </div>
           </div>
         `;
@@ -51,9 +51,9 @@ const generateCards = cardsArr => {
             <h2 class="employee-item-title text-light">${name}</h3>
             <h3 class="employee-item-title text-light">Engineer</h3>
             <div class="col-12 col-md-6 mb-2 p-3 flex-column">
-            <h4 class="employe-item-title text-primary">ID: ${id}</h4>
-            <h4 class="employe-item-title text-primary">Email: ${email}</h4>
-            <h4 class="employe-item-title text-primary">GitHub Username: ${github}</h4>
+            <h4 class="employee-item-title text-primary">ID: ${id}</h4>
+            <h4 class="employee-item-title text-primary">Email: ${email}</h4>
+            <h4 class="employee-item-title text-primary">GitHub Username: ${github}</h4>
             </div>
           </div>
         `;
@@ -67,10 +67,11 @@ const generateCards = cardsArr => {
            <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
              <h2 class="employee-item-title text-light">${internName}</h3>
              <h3 class="employee-item-title text-light">Intern</h3>
-             <h4 class="employe-item-title text-light">ID: ${InternId}</h4>
-             <h4 class="employe-item-title text-light">Email: ${internEmail}</h4>
-             <h4 class="employe-item-title text-light">Email: ${internSchool}</h4>
-    
+             <div class="col-12 col-md-6 mb-2 p-3 flex-column">
+             <h4 class="employee-item-title text-light">ID: ${InternId}</h4>
+             <h4 class="employee-item-title text-light">Email: ${internEmail}</h4>
+             <h4 class="employee-item-title text-light">Email: ${internSchool}</h4>
+            </div>
            </div>
          `;
         })

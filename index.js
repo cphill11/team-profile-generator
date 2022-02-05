@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// is path broken?
-const path = require('path');
+// not used at this time 
+// const path = require('path');
 const generatePage = require('./src/page-template');
 const { writeFile } = require('./src/generateHTML.js');
 

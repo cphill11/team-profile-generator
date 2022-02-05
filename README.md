@@ -30,7 +30,6 @@ THEN I exit the application, and the HTML is generated
 * npm
 * inquirer
 * jest
-* path
 * fs
 
 
