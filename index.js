@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// broken
+
+// is path broken?
 const path = require('path');
 const generatePage = require('./src/page-template');
 const { writeFile } = require('./src/generateHTML.js');
@@ -73,7 +74,6 @@ const promptUser = () => {
       console.log(answers)
       const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
       allEmployees.push(manager);
-      //console.log(allEmployees);
       directory();
     });
   }  
@@ -162,7 +162,6 @@ const promptUser = () => {
       console.log(answers)
       const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGitHub);
       allEmployees.push(engineer);
-      //console.log(allEmployees);
       directory();
     });
   }
@@ -228,33 +227,12 @@ const promptUser = () => {
       console.log(answers)
       const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
       allEmployees.push(intern);
-      //console.log(allEmployees);
       directory();
     });
   }
 
   const generateHTML = () => {
-    console.log(allEmployees);
-    generatePage(allEmployees);
-    console.log(generatePage(allEmployees));
-    // insert use my template stuffs
-    // choice of employee (engineer, intern); each will have their own html setup
-
+    writeFile(generatePage(allEmployees))
   }
 
- promptUser()
-    
-  // .then(portfolioData => {
-  //   return generatePage(portfolioData);
-  // })
-
-  // .then(pageHTML => {
-  //   return writeFile(pageHTML);
-  // })
-  // .then(writeFileResponse => {
-  //   console.log(writeFileResponse);
-  //   // return copyFile();
-  // })
-  // .catch(err => {
-  //   console.log(err);
-  // });
+ promptUser() 

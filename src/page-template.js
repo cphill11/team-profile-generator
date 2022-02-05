@@ -3,12 +3,30 @@ const Engineer = require('../lib/Engineer');
 const Intern = require('../lib/Intern');
 
 const generateCards = cardsArr => {
+  console.log(cardsArr
+    .filter(( feature ) => 
+      { console.log(feature);
+        return feature instanceof Manager
+      })
+    
+    .map(({ name, id, email, officeNumber }) => {
+      return `
+      <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
+        <h3 class="employee-item-title text-light">${name}</h3>
+        <h4 class="employe-item-title text-light">${id}</h4>
+        <h4 class="employe-item-title text-light">${email}</h4>
+        <h4 class="employe-item-title text-light">${officeNumber}</h4>
+
+      </div>
+    `;
+  })
+    .join(''));
   return `
      <section class="my-3" id="employee">
      
     <div class="flex-row justify-space-between">
       ${cardsArr
-        .filter(({ feature }) => feature instanceof Manager)
+        .filter(( feature ) => feature instanceof Manager)
         .map(({ name, id, email, officeNumber }) => {
           return `
           <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
@@ -23,14 +41,14 @@ const generateCards = cardsArr => {
         .join('')}
   
       ${cardsArr
-        .filter(({ feature }) => feature instanceof Engineer)
-        .map(({ engineerName, engineerId, engineerEmail, engineerGitHub }) => {
+        .filter(( feature ) => feature instanceof Engineer)
+        .map(({ name, id, email, github }) => {
           return `
           <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
-            <h3 class="employee-item-title text-light">${engineerName}</h3>
-            <h4 class="employe-item-title text-light">${engineerId}</h4>
-            <h4 class="employe-item-title text-light">${engineerEmail}</h4>
-            <h4 class="employe-item-title text-light">${engineerGitHub}</h4>
+            <h3 class="employee-item-title text-light">${name}</h3>
+            <h4 class="employe-item-title text-light">${id}</h4>
+            <h4 class="employe-item-title text-light">${email}</h4>
+            <h4 class="employe-item-title text-light">${github}</h4>
   
           </div>
         `;
@@ -38,7 +56,7 @@ const generateCards = cardsArr => {
         .join('')}
 
       ${cardsArr
-         .filter(({ feature }) => feature instanceof Intern)
+         .filter(( feature ) => feature instanceof Intern)
          .map(({ internName, InternId, internEmail, internSchool }) => {
            return `
            <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
@@ -59,9 +77,8 @@ const generateCards = cardsArr => {
 
 // export fxn to generate entire page
 module.exports = templateData => {
-    // destructure page data by section
     console.log(templateData);
-  
+    console.log(generateCards(templateData));
     console.log(templateData[0] instanceof Manager);
     return `
     <!DOCTYPE html>
@@ -81,11 +98,11 @@ module.exports = templateData => {
     
       <header>
         <div class="container flex-row justify-space-around align-center py-3">
-      
+        <h1 class="page-title text-secondary py-2 px-3">My Team</h1>
+       </div>
         </div>
       </header>
       
-
       <main class="container my-5">
         ${generateCards(templateData)}
       </main>
@@ -94,5 +111,3 @@ module.exports = templateData => {
     </html>
     `;
   };
-
-  //module.exports = generatePage;
