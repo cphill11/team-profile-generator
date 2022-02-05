@@ -1,39 +1,32 @@
 # Professional Team Profile Generator HTML Starter Code
 
 
-## Descriptioin
-GIVEN a command-line application that accepts user input
+## Description
+Command-line application that accepts user input to generate an HTML file that displays a nicely formatted team roster based on the user's input.
 
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
+Manager is first prompted for their information, including the team manager’s name, employee ID, email address, and office number.  Then the Manager is then prompted for information for their team members, with options including both Engineer and Intern.  
 
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
+Selecting Engineer prompts Manager to to enter the engineer’s name, ID, email, and GitHub username, and they are then taken back to the menu. Selecting Intern prompts Manager to enter the intern’s name, ID, email, and school, and they are then taken back to the menu.
 
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
+### FIX ** Clicking on an email address in the HTML instructs the default email program to open and populate the TO field of the email with the given email address.
 
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
 
+### FIX ** Clicing on a GitHub username opens that GitHub profile in a new tab.
+
+
+When the Manager is finished building the team, the application is exited, and an HTML is generated.
 
 
 ## Installation
 * npm
 * inquirer
 * jest
-* 
+* fs
+* path
 
 
 ## Usage
+Enable a Manager to generate an interactive HTML page for employees on a professional team.
 
 
 ## Website

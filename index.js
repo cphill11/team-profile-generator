@@ -1,61 +1,235 @@
-// const inquirer required to run the inquirer package
 const inquirer = require('inquirer');
-
-// const fs required to run node.js fs module
 const fs = require('fs');
+const generatePage = require('./src/page-template');
+const { writeFile } = require('./src/generateHTML.js');
 
-// path module of node.js; helps w/ file & directory paths
-const path = require('path');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
-// connects index.js to generateIndex.html
-const generateIndex = require ('./utils/generateIndex');
+var allEmployees = [];
 
-
-// function created to write html file
-function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
-}
-
-// function created to initialize app
-function init() {
-    inquirer.prompt(questions)
-    .then((answers) => {
-        //console.log(answers.title);
-        writeToFile('newIndex.html', generateIndex({...answers}))
+const promptUser = () => {
+   inquirer.prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is your name?',
+        validate: nameInput => {
+          if (nameInput) {
+            return true;
+          } else {
+            console.log("Please enter Manager's name");
+            return false;
+          }
+        }
+      },
+        
+      {
+        type: 'input',
+        name: 'id',
+        message: 'What is your ID number?',
+        validate: idInput => {
+          // make sure this returns a number
+          if(idInput.match(/^-?\d+$/)){
+            //valid integer (positive or negative) {
+            return true;
+          } else {
+            console.log('Please enter ID number');
+            return false;
+          }
+        }
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email address?',
+        validate: emailInput => {
+          if (emailInput) {
+            return true;
+            } else {
+              console.log("Please enter Manager's email address");
+              return false;
+            }
+          }
+      },  
+      {
+        type: 'input',
+        name: 'officeNumber',
+        message: 'What is your office number?',
+        validate: officeNumberInput => {
+          if (officeNumberInput) {
+            return true;
+          } else {
+            console.log("Please enter Manager's office number");
+            return false;
+          }
+        }
+      },  
+    ]) 
+    .then(answers => {
+      console.log(answers)
+      const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+      allEmployees.push(manager);
+      directory();
+    });
+  }  
+  
+  const directory = () => {
+    inquirer.prompt([
+      {
+        type: 'list',
+        name: 'directoryAction',
+        message: 'Would you like add an employee to your roster?',
+        choices: ["Engineer", "Intern", "I'm done adding Employees"]
+      }
+    ])
+    .then(answers => {
+      switch(answers.directoryAction) {
+        case "Engineer":
+          addEngineer();
+          break;
+        case "Intern":
+          addIntern();
+          break;
+        default: 
+          generateHTML();
+      }
     })
-}
-// Function call used to initialize app
-init();
+  }
 
+  const addEngineer = () => {
+    inquirer.prompt ([
+      {
+        type: 'input',
+        name: 'engineerName',
+        message: "What is the Engineer's name?",
+        validate: nameInput => {
+          if (nameInput) {
+            return true;
+          } else {
+            console.log("Please enter Engineer's name");
+            return false;
+          }
+        }
+      },
+      {
+        type: 'input',
+        name: 'engineerId',
+        message: "What is the Engineer's ID number?",
+        validate: idInput => {
+          // make sure this returns a number
+          if(idInput.match(/^-?\d+$/)){
+           //valid integer (positive or negative) {
+           return true;
+          } else {
+            console.log("Please enter Engineer's ID number");
+            return false;
+          }
+        }
+      },
+      {
+        type: 'input',
+        name: 'engineerEmail',
+        message: "What is the Engineer's email address?",
+        validate: emailInput => {
+          if (emailInput) {
+            return true;
+          } else {
+            console.log("Please enter Engineer's email address");
+            return false;
+          }
+        }
+      },  
+      {
+        type: 'input',
+        name: 'engineerGitHub',
+        message: "What is the Engineer's GitHub username?",  
+        validate: gitHubInput => {
+          if (gitHubInput) {
+            return true;
+          } else {
+            console.log("Please enter Engineer's GitHub username");
+            return false;
+          }
+        }
+      },  
+    ]) 
+    .then(answers => {
+      console.log(answers)
+      const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGitHub);
+      allEmployees.push(engineer);
+      directory();
+    });
+  }
+  
+  const addIntern = () => {
+    inquirer.prompt ([
+      {
+        type: 'input',
+        name: 'internName',
+        message: "What is the Intern's name?",
+        validate: nameInput => {
+          if (nameInput) {
+            return true;
+          } else {
+            console.log("Please enter Intern's name");
+            return false;
+          }
+        }
+      },
+      {
+        type: 'input',
+        name: 'internId',
+        message: "What is the Intern's ID number?",
+          validate: idInput => {
+            // make sure this returns a number
+            if(idInput.match(/^-?\d+$/)){
+              //valid integer (positive or negative) {
+              return true;
+            } else {
+              console.log("Please enter Interns's ID number");
+              return false;
+            }
+          }
+      },
+      {
+        type: 'input',
+        name: 'internEmail',
+        message: "What is the Intern's email address?",
+        validate: emailInput => {
+          if (emailInput) {
+            return true;
+          } else {
+            console.log("Please enter Intern's email address");
+            return false;
+          }
+        }
+      },  
+      {
+        type: 'input',
+        name: 'internSchool',
+        message: "What is the Intern's school name?",
+        validate: schoolInput => {
+          if (schoolInput) {
+            return true;
+          } else {
+            console.log("Please enter Intern's school name?");
+            return false;
+          }
+          }
+      },  
+    ]) 
+    .then(answers => {
+      console.log(answers)
+      const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+      allEmployees.push(intern);
+      directory();
+    });
+  }
 
+  const generateHTML = () => {
+    writeFile(generatePage(allEmployees))
+  }
 
-
-// Employee class is first parent class
-
-// Properties & methods include:
-// name
-// id
-// email
-// getName()
-// getID()
-// getEmail()
-// getRole()   // returns 'Employee'
-
-
-// Other 3 classes will extend Employee class + more properties/ methods
-// Manager class
-    // officeNumber
-    // getRole()   // overridden to return 'Manager'
-
-// Engineer class
-    // github  // returns GitHub username
-    // getGithub()
-    // getRole()   // overriden to return 'Engineer'
-
-// Intern class
-    // school 
-    // getSchool()
-    // getRole()   // overridden to return 'Intern'
-
-
-//  **** Consider adding validation to ensure proper input ***
+ promptUser() 

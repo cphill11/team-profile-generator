@@ -1,11 +1,21 @@
-// import & mock necessary modules to create a failing test that will check for proper object creation
-const Employee = require('../lib/Employee.js');
 const Manager = require('../lib/Manager.js');
 
-jest.mock('../lib/Manager.js');
+// constructor argument
+test('constructor officeNumber argument', () => {
+    const officenumber = 567
+    const manager = new Manager("name", 1234, "email", officenumber)
+        expect(manager.officeNumber).toBe(officenumber)
+})
 
-// Other 3 classes will extend Employee class + more properties/ methods
-// Manager class
-    // officeNumber
-    // getRole()   // overridden to return 'Manager'
+// method arguments
+test('get officeNumber method', () => {
+    const officenumber = 567
+    const manager = new Manager("name", 1234, "email", officenumber)
+        expect(manager.getOfficeNumber()).toBe(officenumber)
+})
 
+test('getRole method', () => {
+    const getrole = 'Manager'
+    const manager = new Manager("name", 1234, "email", 567)
+        expect(manager.getRole()).toBe(getrole)
+})
