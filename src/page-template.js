@@ -13,10 +13,11 @@ const generateCards = cardsArr => {
       return `
       <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
         <h3 class="employee-item-title text-light">${name}</h3>
+        <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
         <h4 class="employe-item-title text-light">${id}</h4>
         <h4 class="employe-item-title text-light">${email}</h4>
         <h4 class="employe-item-title text-light">${officeNumber}</h4>
-
+      </div>
       </div>
     `;
   })
@@ -30,11 +31,13 @@ const generateCards = cardsArr => {
         .map(({ name, id, email, officeNumber }) => {
           return `
           <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
-            <h3 class="employee-item-title text-light">${name}</h3>
-            <h4 class="employe-item-title text-light">${id}</h4>
-            <h4 class="employe-item-title text-light">${email}</h4>
-            <h4 class="employe-item-title text-light">${officeNumber}</h4>
-
+            <h2 class="employee-item-title text-light">${name}</h3>
+            <h3 class="employee-item-title text-light">Manager</h3>
+            <div class="col-12 col-md-6 mb-2 text-light p-3 flex-column">
+            <h4 class="employe-item-title text-primary>ID: ${id}</h4>
+            <h4 class="employe-item-title text-primary">Email: ${email}</h4>
+            <h4 class="employe-item-title text-primary">Office Number: ${officeNumber}</h4>
+            </div>
           </div>
         `;
       })
@@ -45,11 +48,13 @@ const generateCards = cardsArr => {
         .map(({ name, id, email, github }) => {
           return `
           <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
-            <h3 class="employee-item-title text-light">${name}</h3>
-            <h4 class="employe-item-title text-light">${id}</h4>
-            <h4 class="employe-item-title text-light">${email}</h4>
-            <h4 class="employe-item-title text-light">${github}</h4>
-  
+            <h2 class="employee-item-title text-light">${name}</h3>
+            <h3 class="employee-item-title text-light">Engineer</h3>
+            <div class="col-12 col-md-6 mb-2 p-3 flex-column">
+            <h4 class="employe-item-title text-primary">ID: ${id}</h4>
+            <h4 class="employe-item-title text-primary">Email: ${email}</h4>
+            <h4 class="employe-item-title text-primary">GitHub Username: ${github}</h4>
+            </div>
           </div>
         `;
       })
@@ -60,10 +65,11 @@ const generateCards = cardsArr => {
          .map(({ internName, InternId, internEmail, internSchool }) => {
            return `
            <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
-             <h3 class="employee-item-title text-light">${internName}</h3>
-             <h4 class="employe-item-title text-light">${InternId}</h4>
-             <h4 class="employe-item-title text-light">${internEmail}</h4>
-             <h4 class="employe-item-title text-light">${internSchool}</h4>
+             <h2 class="employee-item-title text-light">${internName}</h3>
+             <h3 class="employee-item-title text-light">Intern</h3>
+             <h4 class="employe-item-title text-light">ID: ${InternId}</h4>
+             <h4 class="employe-item-title text-light">Email: ${internEmail}</h4>
+             <h4 class="employe-item-title text-light">Email: ${internSchool}</h4>
     
            </div>
          `;
@@ -99,7 +105,6 @@ module.exports = templateData => {
       <header>
         <div class="container flex-row justify-space-around align-center py-3">
         <h1 class="page-title text-secondary py-2 px-3">My Team</h1>
-       </div>
         </div>
       </header>
       
