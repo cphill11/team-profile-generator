@@ -34,7 +34,7 @@ const generateCards = cardsArr => {
             <h2 class="employee-item-title text-light">${name}</h3>
             <h3 class="employee-item-title text-light">Manager</h3>
             <div class="col-12 col-md-6 mb-2 text-light p-3 flex-column">
-            <h4 class="employee-item-title text-primary>ID: ${id}</h4>
+            <h4 class="employee-item-title text-primary">ID: ${id}</h4>
             <h4 class="employee-item-title text-primary">Email: ${email}</h4>
             <h4 class="employee-item-title text-primary">Office Number: ${officeNumber}</h4>
             </div>
