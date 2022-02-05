@@ -12,13 +12,13 @@ const generateAbout = aboutText => {
     `;
   };
 
-  // create the projects section
-  const generateProjects = projectsArr => {
+  // create the cards section
+  const generateCards = cardsArr => {
     return `
       <section class="my-3" id="employee">
        
         <div class="flex-row justify-space-between">
-        ${projectsArr
+        ${cardsArr
           .filter(({ feature }) => feature)
           .map(({ name, description, languages, link }) => {
             return `
@@ -32,13 +32,16 @@ const generateAbout = aboutText => {
           })
           .join('')}
   
-        ${projectsArr
+        ${cardsArr
           .filter(({ feature }) => !feature)
-          .map(({ name, description, languages, link }) => {
+          .map(({ name, id, email, officeNumber }) => {
             return `
             <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
               <h3 class="employee-item-title text-light">${name}</h3>
-              <p>${description}</p>
+              <h4 class="employe-item-title text-light">${id}</h4>
+              <h4 class="employe-item-title text-light">${email}</h4>
+              <h4 class="employe-item-title text-light">${officeNumber}</h4>
+
             </div>
           `;
           })
@@ -79,7 +82,7 @@ module.exports = templateData => {
 
       <main class="container my-5">
         ${generateAbout(about)}
-        ${generateProjects(projects)}
+        ${generateCards(cards)}
       </main>
 
     </body>
