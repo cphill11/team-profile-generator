@@ -8,10 +8,7 @@ Manager is first prompted for their information, including the team manager’s 
 
 Selecting Engineer prompts Manager to to enter the engineer’s name, ID, email, and GitHub username, and they are then taken back to the menu. Selecting Intern prompts Manager to enter the intern’s name, ID, email, and school, and they are then taken back to the menu.
 
-### FIX ** Clicking on an email address in the HTML instructs the default email program to open and populate the TO field of the email with the given email address.
-
-
-Clicking on a GitHub username opens that GitHub profile in a new tab. When the Manager is finished building the team, the application is exited, and an HTML is generated.
+Clicking on an email address in the HTML instructs the default email program to open and populate the TO field of the email with the given email address. Clicking on a GitHub username opens that GitHub profile in a new tab. When the Manager is finished building the team, the application is exited, and an HTML is generated.
 
 
 ## Installation
