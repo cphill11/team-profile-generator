@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+// broken
 const path = require('path');
 const generatePage = require('./src/page-template');
 const { writeFile } = require('./src/generateHTML.js');
@@ -234,6 +235,8 @@ const promptUser = () => {
 
   const generateHTML = () => {
     console.log(allEmployees);
+    generatePage(allEmployees);
+    console.log(generatePage(allEmployees));
     // insert use my template stuffs
     // choice of employee (engineer, intern); each will have their own html setup
 
