@@ -22,9 +22,11 @@ When the Manager is finished building the team, the application is exited, and a
 * inquirer
 * jest
 * fs
+* path
 
 
 ## Usage
+Enable a Manager to generate an interactive HTML page for employees on a professional team.
 
 
 ## Website
