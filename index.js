@@ -1,5 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+// not used at this time 
+// const path = require('path');
 const generatePage = require('./src/page-template');
 const { writeFile } = require('./src/generateHTML.js');
 

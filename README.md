@@ -1,4 +1,4 @@
-# Professional Team Profile Generator HTML Starter Code
+# Professional Team Profile HTML Generator
 
 
 ## Description
