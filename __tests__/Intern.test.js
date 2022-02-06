@@ -4,7 +4,7 @@ const Intern = require('../lib/Intern.js');
 test('constructor school argument', () => {
     // set test variable
     const school = "home"
-    const intern = new Intern("name", 1234, "email", school)
+    const intern = new Intern("name", 1234, "email", "school")
         expect(intern.school).toBe(school)
 })
 
@@ -12,7 +12,7 @@ test('constructor school argument', () => {
 test('get School method', () => {
     // set test variable
     const school = "home"
-    const intern = new Intern("name", 1234, "email", school)
+    const intern = new Intern("name", 1234, "email", "school")
         expect(intern.getSchool()).toBe(school)
 })
 
