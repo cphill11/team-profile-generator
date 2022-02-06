@@ -100,6 +100,8 @@
 #employee-card {
   box-shadow:#585b6e 7px 7px 7px;
   border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #employee-name {

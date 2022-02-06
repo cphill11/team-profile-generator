@@ -13,11 +13,13 @@ const generateCards = cardsArr => {
       return `
       <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column" id="employee-card">
         <h3 class="employee-item-title text-light" id="employee-name"s>${name}</h3>
-        <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
-        <h4 class="employe-item-title text-light">${id}</h4>
-        <h4 class="employe-item-title text-light">${email}</h4>
-        <h4 class="employe-item-title text-light">${officeNumber}</h4>
-      </div>
+        <div>
+          <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
+            <h4 class="employe-item-title text-light">${id}</h4>
+            <h4 class="employe-item-title text-light flex-column">${email}</h4>
+            <h4 class="employe-item-title text-light flex-column">${officeNumber}</h4>
+          </div>
+        </div>
       </div>
     `;
   })
@@ -33,11 +35,13 @@ const generateCards = cardsArr => {
           <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column" id="employee-card">
             <h2 class="employee-item-title text-light" id="employee-name">${name}</h3>
             <h3 class="employee-item-title text-light" id="employee-title">Manager</h3>
-            <div class="col-12 col-md-6 mb-2 text-light p-3 flex-column">
-            <h4 class="employee-item-title text-primary">ID: ${id}</h4>
-            <h4 class="employee-item-title text-primary">Email:
-            <a href="mailto:${email}">${email}</a></h4>
-            <h4 class="employee-item-title text-primary">Office Number: ${officeNumber}</h4>
+            <div>
+              <div class="col-12 col-md-6 mb-2 text-light p-3 flex-column">
+                <h4 class="employee-item-title text-primary">ID: ${id}</h4>
+                <h4 class="employee-item-title text-primary flex-column">Email:
+                  <a href="mailto:${email}">${email}</a></h4>
+                <h4 class="employee-item-title text-primary flex-column">Office Number: ${officeNumber}</h4>
+              </div>
             </div>
           </div>
         `;
@@ -51,12 +55,14 @@ const generateCards = cardsArr => {
           <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column" id="employee-card">
             <h2 class="employee-item-title text-light" id="employee-name">${name}</h3>
             <h3 class="employee-item-title text-light" id="employee-title">Engineer</h3>
-            <div class="col-12 col-md-6 mb-2 p-3 flex-column">
-            <h4 class="employee-item-title text-primary">ID: ${id}</h4>
-            <h4 class="employee-item-title text-primary">Email:
-            <a href="mailto:${email}">${email}</a></h4>
-            <h4 class="employee-item-title text-primary">GitHub Username:
-              <a href="https://github.com/${github}" target="_blank">${github}</a></h4>
+            <div>
+              <div class="col-12 col-md-6 mb-2 p-3 flex-column">
+                <h4 class="employee-item-title text-primary">ID: ${id}</h4>
+                <h4 class="employee-item-title text-primary flex-column">Email:
+                  <a href="mailto:${email}">${email}</a></h4>
+                <h4 class="employee-item-title text-primary flex-column">GitHub Username:
+                  <a href="https://github.com/${github}" target="_blank">${github}</a></h4>
+              </div>
             </div>
           </div>
         `;
@@ -70,11 +76,13 @@ const generateCards = cardsArr => {
            <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column" id="employee-card">
              <h2 class="employee-item-title text-light" id="employee-name">${name}</h3>
              <h3 class="employee-item-title text-light" id="employee-title">Intern</h3>
-             <div class="col-12 col-md-6 mb-2 p-3 flex-column">
-             <h4 class="employee-item-title text-primary">ID: ${id}</h4>
-             <h4 class="employee-item-title text-primary">Email:
-             <a href="mailto:${email}">${email}</a></h4>
-             <h4 class="employee-item-title text-primary">Email: ${school}</h4>
+             <div>
+              <div class="col-12 col-md-6 mb-2 p-3 flex-column">
+                <h4 class="employee-item-title text-primary">ID: ${id}</h4>
+                <h4 class="employee-item-title text-primary flex-column">Email:
+                  <a href="mailto:${email}">${email}</a></h4>
+                <h4 class="employee-item-title text-primary flex-column">School: ${school}</h4>
+              </div>
             </div>
            </div>
          `;
