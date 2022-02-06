@@ -15,7 +15,7 @@ test('constructor id argument', () => {
 
 test('constructor email argument', () => {
     const email = 'bob@gmail'
-    const employee = new Employee("Bob", 1234, email)
+    const employee = new Employee("Bob", 1234, 'email')
         expect(employee.email).toBe(email)
 })
 
@@ -34,7 +34,7 @@ test('get id method', () => {
 
 test('get email method', () => {
     const email = 'bob@gmail'
-    const employee = new Employee("Bob", 1234, email)
+    const employee = new Employee("Bob", 1234, 'email')
         expect(employee.getEmail()).toBe(email)
 })
 
