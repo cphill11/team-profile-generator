@@ -13,13 +13,14 @@ const generateCards = cardsArr => {
       return `
       <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column" id="employee-card">
         <h3 class="employee-item-title text-light" id="employee-name"s>${name}</h3>
-        <div>
-          <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
-            <h4 class="employe-item-title text-light">${id}</h4>
-            <h4 class="employe-item-title text-light flex-column">${email}</h4>
-            <h4 class="employe-item-title text-light flex-column">${officeNumber}</h4>
-          </div>
+        <<div>
+        <div class="col-12 col-md-6 mb-2 text-light p-3 flex-column">
+          <h4 class="employee-item-title text-primary">ID: ${id}</h4>
+          <h4 class="employee-item-title text-primary flex-column">Email:
+            <a href="mailto:${email}">${email}</a></h4>
+          <h4 class="employee-item-title text-primary flex-column">Office Number: ${officeNumber}</h4>
         </div>
+      </div>
       </div>
     `;
   })
