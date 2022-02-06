@@ -31,6 +31,7 @@ Screencastify link:
 
 ## Image
 ![Screenshot](/assets/images/screenshot.png)
+![Screenshot](/assets/images/screenshot2.png)
 
 ## Credits
 Criste Phillips
