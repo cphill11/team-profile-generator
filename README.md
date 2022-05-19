@@ -26,6 +26,8 @@ Enable a Manager to generate an interactive HTML page for employees on a profess
 ## Website
 Github link: https://cphill11.github.io/team-profile-generator/
 
+https://github.com/cphill11/team-profile-generator.git
+
 Screencastify link: https://watch.screencastify.com/v/uRXPsHu7ADH433kBH6pT
 
 
